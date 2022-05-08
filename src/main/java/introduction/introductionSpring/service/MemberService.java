@@ -12,12 +12,10 @@ import java.util.Optional;
 // Service 클래스의 method name 은 bussiness logic 과 연괸되는 이름으로 설정하는 것이 유지보수에 용의함
 
 // command + shift + t (해당 클래스의 testclass 생성 )
-@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
     // DI
-    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
