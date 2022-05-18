@@ -12,7 +12,7 @@ import java.util.List;
 
 @Controller
 // Spring Container에서 Spring bean 이 관리된다.
-//
+
 public class MemberController {
 
     private final MemberService memberService;
@@ -32,14 +32,14 @@ public class MemberController {
     public String create(MemberForm form) {
         Member member = new Member();
         member.setName(form.getName());
-        memberService.join(member);
+        memberService.join(member); // 회원가입 이후 redirect
         return "redirect:/";
     }
 
     @GetMapping(value = "/members")
     public String list(Model model) {
         List<Member> members = memberService.findMembers();
-        model.addAttribute("members", members);
+        model.addAttribute("members", members); // key : members
         return "members/memberList";
     }
 

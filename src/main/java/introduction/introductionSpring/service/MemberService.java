@@ -4,6 +4,7 @@ import introduction.introductionSpring.domain.Member;
 import introduction.introductionSpring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import java.util.Optional;
 // Service 클래스의 method name 은 bussiness logic 과 연괸되는 이름으로 설정하는 것이 유지보수에 용의함
 
 // command + shift + t (해당 클래스의 testclass 생성 )
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
